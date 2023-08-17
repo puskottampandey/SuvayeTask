@@ -13,17 +13,11 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int selected = 0;
 
-  Widget widgetScreen(int index) {
-    switch (index) {
-      case 0:
-        return const TodayScreen();
-      case 1:
-        return const ServiceScreen();
-      case 2:
-        return const ChatScreen();
-    }
-    return const Text("not found");
-  }
+  List<Widget> widgetScreen = [
+    const TodayScreen(),
+    const ServiceScreen(),
+    const ChatScreen(),
+  ];
 
   void onTap(int index) {
     setState(() {
@@ -57,8 +51,9 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      body: widgetScreen(selected),
+      body: widgetScreen[selected],
       bottomNavigationBar: BottomNavigationBar(
+          selectedItemColor: Colors.purple.shade100,
           currentIndex: selected,
           onTap: onTap,
           items: const [

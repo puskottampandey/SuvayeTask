@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:suvayeproject/model/pageview_model.dart';
 
 import '../model/gridview_iteam_model.dart';
+import '../widgets/gridview.dart';
+import '../widgets/pageview.dart';
 
 class ServiceScreen extends StatefulWidget {
   const ServiceScreen({super.key});
@@ -10,6 +13,8 @@ class ServiceScreen extends StatefulWidget {
 }
 
 class _ServiceScreenState extends State<ServiceScreen> {
+  final PageController pageController = PageController(viewportFraction: 1);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,20 +23,20 @@ class _ServiceScreenState extends State<ServiceScreen> {
         child: SingleChildScrollView(
           child: SizedBox(
             height: MediaQuery.of(context).size.height,
-            child: Column(
+            child: const Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
+                Text(
                   "Hello,Suvaye Tech",
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.w300,
                   ),
                 ),
-                const SizedBox(
-                  height: 20,
+                SizedBox(
+                  height: 30,
                 ),
-                const Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
@@ -55,10 +60,19 @@ class _ServiceScreenState extends State<ServiceScreen> {
                     )
                   ],
                 ),
-                const SizedBox(
-                  height: 200,
+                SizedBox(
+                  height: 40,
                 ),
-                const Row(
+
+                // PageViewbuilder widget
+                SizedBox(
+                  height: 130,
+                  child: Pageview(),
+                ),
+                SizedBox(
+                  height: 50,
+                ),
+                Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
@@ -82,48 +96,14 @@ class _ServiceScreenState extends State<ServiceScreen> {
                     )
                   ],
                 ),
-                const SizedBox(
+                SizedBox(
                   height: 20,
                 ),
+                // GridView widget
                 Expanded(
                   child: Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: GridView.builder(
-                        gridDelegate:
-                            const SliverGridDelegateWithFixedCrossAxisCount(
-                                mainAxisSpacing: 30,
-                                crossAxisSpacing: 30,
-                                mainAxisExtent: 60,
-                                crossAxisCount: 2),
-                        itemCount: dataitems.length,
-                        itemBuilder: (context, index) {
-                          final data = dataitems[index];
-
-                          return Container(
-                            width: 50,
-                            decoration: BoxDecoration(
-                              color: data.containerColor,
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.all(20.0),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  Icon(
-                                    data.icon,
-                                    color: data.iconColor,
-                                  ),
-                                  Text(
-                                    data.text,
-                                    style: const TextStyle(letterSpacing: 0),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          );
-                        }),
+                    padding: EdgeInsets.all(16.0),
+                    child: Gridview(),
                   ),
                 )
               ],

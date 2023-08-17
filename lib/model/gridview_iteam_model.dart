@@ -15,7 +15,7 @@ class ContainerProperties {
 
 List<ContainerProperties> dataitems = [
   ContainerProperties(
-      icon: Icons.apps,
+      icon: Icons.app_shortcut_outlined,
       iconColor: Colors.purple.shade100,
       containerColor: const Color.fromARGB(80, 227, 193, 233),
       text: "Apps"),
