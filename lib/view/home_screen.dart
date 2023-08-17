@@ -42,12 +42,27 @@ class _HomePageState extends State<HomePage> {
                 const Text('Suvaye')
               ],
             ),
-            IconButton(
-                onPressed: () {},
-                icon: const Icon(
-                  Icons.notifications_none,
-                  size: 30,
-                ))
+            Stack(
+              children: [
+                IconButton(
+                  onPressed: () {},
+                  icon: const Icon(
+                    Icons.notifications_none,
+                    size: 30,
+                  ),
+                ),
+                Positioned(
+                    top: 12,
+                    right: 15,
+                    child: Container(
+                      height: 8,
+                      width: 8,
+                      decoration: BoxDecoration(
+                          color: Colors.red,
+                          borderRadius: BorderRadius.circular(12)),
+                    ))
+              ],
+            )
           ],
         ),
       ),

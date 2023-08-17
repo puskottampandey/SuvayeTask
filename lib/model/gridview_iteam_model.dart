@@ -31,7 +31,7 @@ List<ContainerProperties> dataitems = [
       text: "Designs"),
   ContainerProperties(
       icon: Icons.person,
-      iconColor: Colors.cyan.shade100,
-      containerColor: const Color.fromARGB(200, 245, 245, 245),
+      iconColor: Colors.cyan.shade400,
+      containerColor: const Color.fromARGB(30, 0, 255, 255),
       text: "Consultant"),
 ];

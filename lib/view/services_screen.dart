@@ -41,7 +41,7 @@ class _ServiceScreenState extends State<ServiceScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "Service",
+                      "Services",
                       style:
                           TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     ),
