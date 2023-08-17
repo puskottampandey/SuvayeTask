@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:suvayeproject/model/pageview_model.dart';
 
-import '../model/gridview_iteam_model.dart';
+import '../model/pageview_model.dart';
 import '../widgets/gridview.dart';
 import '../widgets/pageview.dart';
 
 class ServiceScreen extends StatefulWidget {
-  const ServiceScreen({super.key});
+  const ServiceScreen({
+    super.key,
+  });
 
   @override
   State<ServiceScreen> createState() => _ServiceScreenState();
@@ -14,7 +15,7 @@ class ServiceScreen extends StatefulWidget {
 
 class _ServiceScreenState extends State<ServiceScreen> {
   final PageController pageController = PageController(viewportFraction: 1);
-
+  int currentPage = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,20 +24,20 @@ class _ServiceScreenState extends State<ServiceScreen> {
         child: SingleChildScrollView(
           child: SizedBox(
             height: MediaQuery.of(context).size.height,
-            child: const Column(
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   "Hello,Suvaye Tech",
                   style: TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.w300,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 30,
                 ),
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
@@ -60,19 +61,36 @@ class _ServiceScreenState extends State<ServiceScreen> {
                     )
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 40,
                 ),
 
                 // PageViewbuilder widget
-                SizedBox(
+                const SizedBox(
                   height: 130,
                   child: Pageview(),
                 ),
-                SizedBox(
+                const SizedBox(height: 10),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: List.generate(pageview.length, (index) {
+                    return AnimatedContainer(
+                      duration: const Duration(milliseconds: 300),
+                      width: currentPage == index ? 12 : 8,
+                      height: 8,
+                      margin: const EdgeInsets.symmetric(horizontal: 8),
+                      decoration: BoxDecoration(
+                          color:
+                              currentPage == index ? Colors.blue : Colors.grey,
+                          borderRadius: BorderRadius.circular(12)),
+                    );
+                  }),
+                ),
+
+                const SizedBox(
                   height: 50,
                 ),
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
@@ -96,11 +114,11 @@ class _ServiceScreenState extends State<ServiceScreen> {
                     )
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 // GridView widget
-                Expanded(
+                const Expanded(
                   child: Padding(
                     padding: EdgeInsets.all(16.0),
                     child: Gridview(),

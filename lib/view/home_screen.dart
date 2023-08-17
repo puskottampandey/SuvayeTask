@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:suvayeproject/screens/Services_screen.dart';
-import 'package:suvayeproject/screens/chat_screen.dart';
-import 'package:suvayeproject/screens/today_screen.dart';
+import 'package:suvayeproject/view/services_screen.dart';
+import 'package:suvayeproject/view/chat_screen.dart';
+import 'package:suvayeproject/view/today_screen.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -60,7 +60,7 @@ class _HomePageState extends State<HomePage> {
             BottomNavigationBarItem(
                 icon: Icon(Icons.calendar_today_outlined), label: 'Today'),
             BottomNavigationBarItem(
-                icon: Icon(Icons.apps_outlined), label: "Servies"),
+                icon: Icon(Icons.apps_outlined), label: "Services"),
             BottomNavigationBarItem(
                 icon: Icon(Icons.chat_bubble_outline), label: "Chat"),
           ]),

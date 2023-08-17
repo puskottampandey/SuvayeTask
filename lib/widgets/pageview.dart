@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import '../model/pageview_model.dart';
 
 class Pageview extends StatefulWidget {
-  const Pageview({super.key});
+  const Pageview({
+    super.key,
+  });
 
   @override
   State<Pageview> createState() => _PageviewState();
@@ -11,10 +13,10 @@ class Pageview extends StatefulWidget {
 
 class _PageviewState extends State<Pageview> {
   final PageController pageController = PageController(viewportFraction: 1);
+
   @override
   Widget build(BuildContext context) {
     return PageView.builder(
-        reverse: false,
         padEnds: true,
         scrollDirection: Axis.horizontal,
         controller: pageController,

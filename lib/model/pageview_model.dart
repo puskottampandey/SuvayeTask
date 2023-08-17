@@ -13,18 +13,17 @@ class PageviewModel {
 
 List<PageviewModel> pageview = [
   PageviewModel(
-    heading: "App Development",
-    content: "Develop beautiful fast mobile applications",
-    containerColor: const Color.fromARGB(80, 227, 193, 233),
-  ),
+      heading: "App Development",
+      content: "Develop beautiful fast mobile applications",
+      containerColor: const Color.fromARGB(20, 0, 255, 0)),
   PageviewModel(
-    heading: "App Development",
-    content: "Develop beautiful fast mobile applications",
+    heading: "Websites",
+    content: "Develop beautiful fast web applications",
     containerColor: const Color.fromARGB(80, 255, 192, 203),
   ),
   PageviewModel(
-    heading: "App Development",
-    content: "Develop beautiful fast mobile applications",
+    heading: "Designs",
+    content: "Develop designs for mobile and web application",
     containerColor: const Color.fromARGB(200, 245, 245, 245),
   ),
 ];
